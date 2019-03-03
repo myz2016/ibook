@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>230</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>CompoundRoot
+--
+
+--
+
+--
+userAction对象</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>20</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ValueStack（值栈）</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>510</x>
+      <y>20</y>
+      <w>320</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Struts2中所有的值都是存在这里的。它由两部
+分组成，
+1、ActionContext（是一个map）
+2、	CompoundRoot</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>30</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>230</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>ActionContext
+--
+password：7758521
+--
+num：123
+--
+request:gender:男
+--
+session:sessionInfo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>40</y>
+      <w>150</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;80.0;130.0;80.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>110</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;120.0;140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>820</x>
+      <y>220</y>
+      <w>320</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>CompoundRoot是一个使用了List的栈结构
+使用push入栈，使用pop出栈
+当调用一个Action时，首先是将Action入栈
+当使用CompoundRoot的时候，如果不加#root[0]
+就表示从第一个元素取数据。</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>220</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>820</x>
+      <y>530</y>
+      <w>290</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>当调用ActionContext的put方法时
+其值会以键值对的形式存入ActionContext中
+所以在页面使用
+&lt;s:property value="#password"/&gt;
+&lt;s:property value="#num"/&gt;
+就可以得到值：7758521,123
+从map中取值要使用#</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>820</x>
+      <y>330</y>
+      <w>300</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>当调用了UserAction时，UserAction对象就被
+push进栈，并且是在栈顶的位置。</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>120</x>
+      <y>430</y>
+      <w>500</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Enter UserAction
+--
+UserAction#list
+--
+this.setName("z3")
+--
+this.setAge(21)
+--
+ActionContext.getContext().put("password","7758521")
+--
+ActionContext.getContext().put("num",123)
+--
+ServletActionContext.getRequest().setAttribute("gender","男")</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>10</x>
+      <y>250</y>
+      <w>140</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;280.0;110.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>10</x>
+      <y>270</y>
+      <w>140</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;280.0;110.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>520</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>540</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>820</x>
+      <y>410</y>
+      <w>270</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;s:property value="name"/&gt;
+name前面没有加#，说明是从根
+取值，也就是CompoundRoot。
+现在栈顶是UserAction，所以也就是
+从UserAction中取name值，所以值为z3
+&lt;s:property value="age"/&gt;同理</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>470</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>490</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>340</y>
+      <w>230</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>290</y>
+      <w>410</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>390.0;10.0;340.0;10.0;340.0;90.0;10.0;90.0;10.0;150.0;50.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>10</x>
+      <y>300</y>
+      <w>140</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;280.0;110.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>820</x>
+      <y>670</y>
+      <w>270</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;s:property vlaue="#request.gender"/&gt;
+request对象也是存在ActionContext中的，
+所以也要使用#取值
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>560</y>
+      <w>230</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>850</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>CompoundRoot
+--
+
+--
+userAction对象
+--
+user对象</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>1030</y>
+      <w>360</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>操纵ValueStack
+--
+UserAction#list
+--
+User user = new User("胡世仁", 32);
+--
+ActionContext.getContext().getValueStack().push(user);
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>370</x>
+      <y>730</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>下图是在上图的基础上继续执行的</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>670</x>
+      <y>1040</y>
+      <w>260</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>ValueStack是可以通过代码操纵的。
+在UserAction的list方法中
+得到ValueStack,新建User对象，
+设置name和age属性，并将其添加
+进ValueStack中</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>1080</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>920</y>
+      <w>130</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0;10.0;190.0;110.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>670</x>
+      <y>820</y>
+      <w>260</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>现栈顶元素为user对象，所以页面中使用
+&lt;s:property value="name"/&gt;获取到的
+name值为胡世仁，而不是z3。
+&lt;s:property value="age"/&gt;获取到的
+age值还是21。因为虽然栈顶是user对象
+但是user对象中没有age属性，所以它会
+自动向下查找，然后发现userAction对象
+中有age属性，进而获取了值。</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>920</y>
+      <w>380</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>360.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

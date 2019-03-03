@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <bean name="hello" class="com.spring.test.HelloServiceImpl">
+        <property name="text" value="Service!!!"></property>
+        <property name="outService" ref="out"></property>
+    </bean>
+    <bean name="out" class="com.spring.test.OutService">
+        <property name="helloServiceImpl" ref="hello"></property>
+        <property name="service" value="OutService"></property>
+    </bean>
+</beans>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.locale" value="zh_CN"></constant>
+    <!--struts2动态方法调用-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default,json-default">
+        <!--可以为一个Action写多个方法进行对应，这样可以减少Action的数量，但是无法减少配置的数量-->
+        <!--<action name="user_add" class="com.mfh.action.UserAction" method="add">
+            <result>/WEB-INF/User/add.jsp</result>
+        </action>
+        <action name="user_addInput" class="com.mfh.action.UserAction" method="addInput">
+            <result>/WEB-INF/User/addInput.jsp</result>
+        </action>
+        <action name="user_list" class="com.mfh.action.UserAction" method="list">
+            <result>/WEB-INF/User/list.jsp</result>
+        </action>-->
+        <!--以下方式可以仅仅写一个Action,之后通过在调用的时候确定方法，这个方法虽然减少了Action的配置，
+        但是依然得增加大量结果集进行配置-->
+        <!--访问方式：
+            1、省略http://ip:port/projectName/users!add -> 访问UserAction的add方法
+            2、省略http://ip:port/projectName/users?method:add ->效果同上-->
+        <!--<action name="users" class="com.mfh.action.UserAction">
+            <result name="add">/WEB-INF/User/add.jsp</result>
+            <result name="addInput">/WEB-INF/User/addInput.jsp</result>
+            <result name="list">/WEB-INF/User/list.jsp</result>
+        </action>-->
+        <action name="*_*" class="com.mfh.action.{1}Action" method="{2}">
+            <result name="{2}">/WEB-INF/{1}/{2}.jsp</result>
+            <!--客户端跳转-->
+            <result name="re_list" type="redirect">/{1}_list.action</result>
+            <result name="json_0" type="json">
+                <param name="root">result</param>
+            </result>
+
+            <result name="json_1" type="json">
+                <param name="root">dataMap</param>
+            </result>
+
+            <result name="json_2" type="json">
+                <param name="root">result</param>
+            </result>
+
+            <result name="json_3" type="json">
+            </result>
+
+            <result name="json_4" type="json">
+            </result>
+
+            <result name="json_5" type="json">
+            </result>
+
+            <result name="json_6" type="json">
+                <param name="root">result</param>
+            </result>
+
+            <result name="json_7" type="json">
+                <param name="root">users</param>
+            </result>
+
+            <result name="json_9" type="json">
+                <param name="root">us</param>
+            </result>
+        </action>
+        <action name="period" class="com.mfh.action.PeriodAction" method="firstLoad">
+            <result name="period">dynamicTable/period.jsp</result>
+        </action>
+        <action name="dynamicTable" class="com.mfh.action.PeriodAction" method="show">
+            <result name="showTable" type="json">
+                <param name="root">table</param>
+            </result>
+        </action>
+    </package>
+</struts>
